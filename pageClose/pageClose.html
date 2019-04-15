@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+    </style>
+</head>
+
+<body>
+
+    <script>
+        document.addEventListener('pagehide', function () {
+            alert('要关闭，pagehide')
+        })
+
+        window.addEventListener('beforeunload', function () {
+            alert('要关闭，beforeunload')
+            return "message";
+        })
+
+        document.addEventListener('unload', function () {
+            alert('要关闭，load')
+        })
+
+        // window.onbeforeunload = function (e) {
+        //     var message = 'some word';
+        //     e = e || window.event;
+
+        //     if (e) {
+        //         e.returnValue = message;
+        //     }
+
+        //     return message;
+        // }
+
+        document.addEventListener('visibilitychange', function () {
+            alert('要关闭，visibilitychange:' + document.visibilityState)
+        })
+    </script>
+</body>
+
+</html>
